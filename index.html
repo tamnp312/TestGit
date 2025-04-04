@@ -9,6 +9,16 @@
 
 </head>
 <body>
-    <h1 class="heading"> Hello </h1>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                const container = document.createElement('div'); 
+                container.innerHTML = data; 
+                document.body.prepend(container); 
+            })
+            .catch(error => console.error('Error loading header:', error));
+    </script>
+
 </body>
 </html>
